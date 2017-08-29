@@ -77,7 +77,7 @@ function onYouTubeIframeAPIReady(song) {
                     player.loadVideoById(songList[currentIndex].song_id);
                     player.playVideo()
                     loadInfo()
-                },15000)
+                },30000)
                 done = false;
             }else{
                 location.replace('/')
