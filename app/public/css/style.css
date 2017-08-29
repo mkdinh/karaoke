@@ -1,0 +1,279 @@
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    --blue-grey: #607d8b;
+    --blue-grey-3: #455a64;
+}
+
+.container{
+    width: 97vw;
+}
+
+#content-wrapper{
+    display:none
+}
+
+input:-webkit-autofill {
+    -webkit-box-shadow: inset 0 0 0px 9999px white !important;
+}
+
+.hidden{
+    display: none
+}
+
+main {
+flex: 1 0 auto;
+}
+
+::-webkit-scrollbar { 
+    display: none; 
+}
+
+/* NAVBAR */
+/* ------------------------------------------- */
+
+nav{
+    background-color: var(--blue-grey)
+}
+
+.brand-logo{
+    height:100%
+}
+
+#image-logo{
+    height: 60%;
+    margin: 20%;
+}
+
+#nav-mobile{
+    margin-right: 2rem;
+}
+
+/* SIDENAV */
+/* ------------------------------------------- */
+
+.collection .collection-item.avatar .secondary-content{
+    padding: 0
+}
+.side-nav h3{
+    font-family: 'Baloo Bhaijaan', cursive;
+    color: #b71c1c;
+    text-align: center
+}
+
+.side-nav li>a>i.material-icons{
+    margin: 0;
+    float: right;
+}
+
+/* MAIN */
+/* ------------------------------------------- */
+
+#btn-wrapper{
+    margin: 1rem 0 0 0;     
+}
+
+.btn{
+    background-color: #b71c1c 
+}
+
+.btn:hover,.btn:visited{
+    background-color: #c62828;
+}
+
+#search-form{
+    margin-top: .6rem;
+}
+
+#search-wrapper{
+    margin-bottom: 0;
+}
+
+#search {
+    font-size: 2rem;
+    height: 5rem;
+    margin: 1rem 0;
+}
+
+#search:focus{
+    border-color: var(--blue-grey-3);
+    -webkit-box-shadow: 0 1px 0 0 var(--blue-grey-3);
+    box-shadow: 0 1px 0 0 var(--blue-grey-3);
+}
+
+#search-label{
+    font-size: 3rem;
+    font-family: 'Baloo Bhaijaan', cursive;
+}
+
+#search:focus + #search-label{
+    color: var(--blue-grey-3);
+}
+
+#search-history{
+    
+}
+
+
+/* SONG LIST */
+#song-list{
+    position: -webkit-sticky; 
+    position: sticky;
+    top: 0;
+}
+
+#song-list i.small{
+    font-size: 3rem;
+}
+
+#clear-song-list{
+    color: var(--blue-grey-3);
+    transition: color .5s
+}
+
+#clear-song-list:hover{
+    color: var(--blue-grey)
+}
+
+#table-song-list{
+    max-height: 75vh;
+    overflow: scroll;
+}
+
+#song-list h4{
+    font-family: 'Baloo Bhaijaan', cursive;
+    color: var(--blue-grey-3);
+}
+
+
+/* FAVORITE TABLE */
+.collapsible-header{
+    overflow:hidden;
+    /* display: block */
+}
+
+.collapsible-header .s8{
+    overflow:hidden;
+}
+
+.collapsible-header .material-icons{
+    margin-right: 0
+}
+
+.collapsible-header a, .side-nav a{
+    color: var(--blue-grey-3);
+    transition: color .5s
+}
+.collapsible-header a:hover, .side-nav a{
+    color: var(--blue-grey)
+}
+
+
+/* SEARCH DISPLAY */
+
+#search-display-wrapper{
+    text-align: center;
+}
+
+#search-display{
+    margin:auto;
+    overflow: auto;
+}
+
+.row .col.m2{
+    padding: 0;
+}
+
+.card{
+    position: relative;
+    display: inline-block;
+    overflow:hidden;
+    padding: 1%
+}
+
+.card .card-image img{
+    height: 10rem
+}
+
+.card .card-content{
+    font-size: 1rem;
+    overflow: hidden;
+    padding: 1rem;
+}
+
+.card .card-action a:not(.btn):not(.btn-large):not(.btn-large):not(.btn-floating){
+    margin-right: 0;
+    color: #b71c1c;
+}
+
+/* .add-video{
+    width: 100%;
+} */
+
+.card .card-action{
+    padding: .5rem 0;
+    width: 100%;
+    display:inline-block;
+}
+
+.hide{
+    display: none
+}
+
+/* PLAY PAGE */
+#youtube-player{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    z-index: 1;
+}
+
+#song-wrapper{
+    position: absolute;
+    top: 10%;
+    right: 0;
+    background-color: rgba(255,255,255,0.5);
+    z-index: 999;
+    display:none;
+    padding: 0 2rem;
+    max-width: 80vw;
+}
+
+#song-title{
+    font-family: 'Baloo Bhaijaan', cursive;
+    color: var(--blue-grey-3);
+}
+
+#next-song-wrapper{
+    height: 80%;
+    opacity: 0
+}
+
+#inner-wrapper{
+    margin:auto
+}
+
+#next-song-wrapper h3{
+    margin:1rem;
+    font-family: 'Baloo Bhaijaan', cursive;
+}
+
+#next-song{
+    margin:auto;
+    font-family: 'Baloo Bhaijaan', cursive;
+    color: maroon;
+}
+
+
+/* FOOTER */
+/* ------------------------------------------- */
+
+.page-footer{
+    background-color: var(--blue-grey);
+}
+
+.page-footer .seperator{
+    margin: 0 1rem;
+}
