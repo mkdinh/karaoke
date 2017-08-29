@@ -8,7 +8,7 @@ var list = [];
 $('.button-collapse').sideNav({
     menuWidth: 300, // Default is 300
     edge: 'right', // Choose the horizontal origin
-    closeOnClick: true, // Closes side-nav on <a> clicks, useful for Angular/Meteor
+    closeOnClick: false, // Closes side-nav on <a> clicks, useful for Angular/Meteor
     draggable: true, // Choose whether you can drag to open on touch screens,d
   }
 );
@@ -254,6 +254,26 @@ $('#table-favorites').on('click','.fav-list-delete', function(ev){
 
 // UPDATE SONG LIST
 // -----------------------------------------------------------------------------------------
+function createSongItem(song){  
+  list.push(song)
+  
+  var item = $('<li>');
+  item.addClass('collapsible-header song-list-item');
+  item.attr('id','song-list-'+song.song_id)
+
+  var col1 = $("<div class='col s2'>")
+  var col2 = $("<div class='col s10'>")
+
+
+  col1.append("<a href='#/'><i class='material-icons left song-list-delete' data-id='"+song.song_id+"'>delete</i></a>");
+  col2.append("<span class='truncate'>"+song.song_name+"</span>");
+
+  item.append(col1,col2);
+  $('#table-song-list').append(item)
+  item.fadeIn()
+}
+
+
 function updateSongList (){
 
   $('#table-song-list').empty()
@@ -264,21 +284,7 @@ function updateSongList (){
     success: function(songs){
       console.log(songs)
       songs.forEach(function(song){
-        list.push(song)
-        
-        var item = $('<li>');
-        item.addClass('collapsible-header');
-        item.attr('id','song-list-'+song.song_id)
-      
-        var col1 = $("<div class='col s2'>")
-        var col2 = $("<div class='col s10'>")
-      
-      
-        col1.append("<a href='#/'><i class='material-icons left song-list-delete' data-id='"+song.song_id+"'>delete</i></a>");
-        col2.append("<span class='truncate'>"+song.song_name+"</span>");
-      
-        item.append(col1,col2);
-        $('#table-song-list').append(item)
+        createSongItem(song)
       })
     } 
   })
@@ -304,7 +310,7 @@ $('#search-display').on('click','.add-song', function(ev){
     data: song,
     success: function(){
       Materialize.toast('added!', 1000,'',function(){}) // 4000 is the duration of the toast
-      updateSongList();
+      createSongItem(song)
     }
   })
 })
@@ -327,7 +333,7 @@ $('.side-nav').on('click','.add-song', function(ev){
     data: song,
     success: function(){
       Materialize.toast('added!', 1000,'',function(){}) // 4000 is the duration of the toast
-      updateSongList();
+      createSongItem(song)
     }
   })
 })
